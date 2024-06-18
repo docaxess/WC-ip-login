@@ -1,0 +1,65 @@
+:host {
+  --primary-color: var(--primaryColor, #1A73E8);
+  --primary-color: var(--secondaryColor, #948e8e);
+}
+* {
+    box-sizing: border-box;
+    margin: 5px;
+    font-family: "Open Sans",sans-serif;
+  }
+  .input {
+    width: 100%;
+    max-width: 20em;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: relative;
+  }
+  .input__label {
+    position: absolute;
+    left: 1em;
+    top: -0.5em;
+    background: #fff;
+    padding: 0 0.5em;
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .input__input {
+    color: #000;
+    font-size: 1rem;
+    border-style: none;
+    outline: none;
+    width: 100%;
+    padding: 0.8em 1em;
+    border: 1px solid var(--secondaryColor);
+    border-radius: 4px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .input__input:hover {
+    background-position: 100% 0;
+  }
+  
+  .input__input:focus {
+    border: 1px solid  var(--primaryColor);
+  
+  }
+  .email__input {
+    flex-grow: 1;
+    height: 35px;
+  }
+  
+  .required-asterisk {
+    color: red;
+    margin-left: 2px;
+    margin-right: 0;
+  }
+
+  .input__error {
+    color: red;
+    font-size: 0.8rem;
+    margin-top: 0.5em;
+  }

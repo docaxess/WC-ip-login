@@ -6,56 +6,57 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface IpEmail {
+        "errorMessage": string;
+        "inputLabel": string;
+        "invalid": boolean;
+    }
+    interface IpPassword {
+        "errorMessage": string;
+        "forgotPasswordLink": string;
+        "invalid": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLIpEmailElement extends Components.IpEmail, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLIpEmailElement: {
+        prototype: HTMLIpEmailElement;
+        new (): HTMLIpEmailElement;
+    };
+    interface HTMLIpPasswordElement extends Components.IpPassword, HTMLStencilElement {
+    }
+    var HTMLIpPasswordElement: {
+        prototype: HTMLIpPasswordElement;
+        new (): HTMLIpPasswordElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "ip-email": HTMLIpEmailElement;
+        "ip-password": HTMLIpPasswordElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface IpEmail {
+        "errorMessage"?: string;
+        "inputLabel"?: string;
+        "invalid"?: boolean;
+    }
+    interface IpPassword {
+        "errorMessage"?: string;
+        "forgotPasswordLink"?: string;
+        "invalid"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "ip-email": IpEmail;
+        "ip-password": IpPassword;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ip-email": LocalJSX.IpEmail & JSXBase.HTMLAttributes<HTMLIpEmailElement>;
+            "ip-password": LocalJSX.IpPassword & JSXBase.HTMLAttributes<HTMLIpPasswordElement>;
         }
     }
 }

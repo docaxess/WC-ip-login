@@ -4,11 +4,83 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-
+    <style>
+       .login-form {
+      max-width: 300px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form-group {
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    .form-group input{
+      width: 100%;
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    .btn{
+      align-items: center;
+      padding: 9px 18px;
+      font-size: 12px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    </style>
     <script type="module" src="/build/ip-login.esm.js"></script>
     <script nomodule src="/build/ip-login.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <form class="login-form">
+      <ip-email
+      class="form-group "
+      error-message="The email entered is incorrect"
+    >
+    </ip-email>
+    <ip-password
+    class="form-group "
+    error-message="The password entered is incorrect"
+    >
+    </ip-password>
+    <button class="btn" type="submit" >
+      Login
+    </button>
+    </form>
+
+    <form class="login-form">
+      <ip-email
+      class="form-group "
+      error-message="The username entered is incorrect"
+      invalid="true"
+      input-label="User name"
+    >
+    </ip-email>
+    <ip-password
+    class="form-group "
+    error-message="The password entered is incorrect"
+    invalid="true"
+    forgot-password-link="https://www.google.com"
+    >
+    </ip-password>
+    <button class="btn" type="submit" >
+      Login
+    </button>
+    </form>
+    
+
   </body>
 </html>
