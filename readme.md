@@ -30,7 +30,7 @@ To use these components, we make us of tag: As input, we have the following opti
 
 ## Ip-password
 
-  - **error-message** : The error message when the user enters a wrong username or email.
+  - **error-message** : The error message when the user enters a wrong password.
   - **invalid** : It's a boolean Prop, you can attach it to your function, if invalid="true", the error-message is displayed.
   - **forgot-password-link** : your personal link for reinitialize password
 
